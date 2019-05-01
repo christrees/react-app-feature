@@ -1,4 +1,5 @@
 import Page from './page'
+import navBar from './ta-nav.object'
 
 class HomePage extends Page {
 
@@ -6,9 +7,6 @@ class HomePage extends Page {
     * define elements
     */
 
-    get listNav ()     { return browser.element('a.nav-list'); }
-    get signOut ()     { return browser.element('button.sign-out'); }
-    get versionInfo () { return browser.element('div.ct-ra-version'); }
 
     /**
      * define or overwrite page methods
@@ -19,13 +17,13 @@ class HomePage extends Page {
     }
 
     waitForHomePageToLoad () {
-      if(!this.listNav.isVisible()){
-        this.listNav.waitForVisible(3000);
+      if(!navBar.getNavList.isVisible()){
+        navBar.getNavList.waitForVisible(3000);
       }
     }
 
-    getListNavText(){
-      return this.listNav.getText();
+    getNavListText () {
+      return navBar.getNavList.getText();
     }
 }
 

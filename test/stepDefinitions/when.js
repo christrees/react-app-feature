@@ -1,9 +1,10 @@
 
 import { defineSupportCode } from 'cucumber';
+import clickElement from '../support/action/clickElement';
 import christreesGithubPage from '../pageobjects/christrees-github-search.page';
 import loginPage from '../pageobjects/ta-login.page';
 import listPage from '../pageobjects/ta-list.page';
-import navObject from '../pageobjects/ta-nav.object';
+
 
 defineSupportCode(function({ When }) {
   // *** belongs to christrees-github-search feature
@@ -23,7 +24,7 @@ defineSupportCode(function({ When }) {
 
   // *** belongs to navObject in the ta-list page feature
   When(/^I click the "([^"]*)" link$/, function(arg) {
-    navObject.clickNavList();    
+    listPage.Nav.clickNavList();    
   });
 
   //When I click the button with <buttonText> text *** ta-list-repo feature
@@ -31,5 +32,10 @@ defineSupportCode(function({ When }) {
     //ToDo: put in nav selector list code
     listPage.clickListButton(buttonText);
   });
+
+  When(
+    /^I (click|doubleclick) on the (link|button|element) "([^"]*)?"$/,
+    clickElement
+  );
 
 });

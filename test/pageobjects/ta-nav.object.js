@@ -1,13 +1,16 @@
-import Page from './page'
 
-class NavObject extends Page {
+
+class NavObject {
 
     /**
     * define elements
     */
 
     get navBar () { return browser.element('ul.nav-bar'); }
-    get navLinkList () { return browser.element('a.nav-list'); }
+    get navList () { return browser.element('a.nav-list'); }
+    get signIn ()     { return browser.element('button.sign-in'); }
+    get signOut ()     { return browser.element('button.sign-out'); }
+    get versionInfo () { return browser.element('div.ct-ra-version'); }
 
     /**
      * define or overwrite page methods
@@ -18,11 +21,11 @@ class NavObject extends Page {
         this.navLinkList.waitForVisible(10000);
       }
     }
-    getNavLinkList () {
-      return this.navLinkList();
+    getNavList () {
+      return this.navList();
     }
     clickNavList () {
-      this.navLinkList.click();
+      this.navList.click();
     }
 
 }

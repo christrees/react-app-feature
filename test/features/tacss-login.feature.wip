@@ -1,0 +1,13 @@
+Feature: test app css (tacss) check for login
+    As a react-app CSS Designer
+    I want to verify css effects in the react-app
+    So I have confidence that the user the desired UX effect
+
+    Given I am at the "list" page
+
+    Scenario: list-repo css
+        Then  I should see <element> with an attribute <react-app-CSS-class> containing value <value>
+
+Examples:
+| element | react-app-CSS-class | value       |
+| button  | class               | sign-in     |

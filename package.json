@@ -11,7 +11,6 @@
     "test-mobile": "node node_modules/webdriverio/bin/wdio ./test/config/suite.appium.conf.js",
     "allure-report": "node_modules/.bin/allure generate ./test/reports/allure-results -c && allure open",
     "junit-report": "node_modules/.bin/junit-viewer --results=./test/reports/junit-results --save=junit-results.html && open junit-results.html",
-    "setup-reports": "mkdir test/reports/allure-results && mkdir test/reports/errorShots && mkdir test/reports/json-results && mkdir test/reports/junit-results",
     "clean-reports": "rm -f test/reports/allure-results/*.* && rm -f test/reports/errorShots/*.* && rm -f test/reports/json-results/*.* && rm -f test/reports/junit-results/*.*"
   },
   "keywords": [
