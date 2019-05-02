@@ -5,7 +5,12 @@ node_js:
   - "stable"
 addons:
   firefox: "60.0"
+env:
+  global:
+    - YARN_GPG=no
+
 before_install:
+- if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then cinst -y python2; fi
 - sudo apt-get update
 - sudo apt-get install dbus-x11
 - export DISPLAY=:99.0
